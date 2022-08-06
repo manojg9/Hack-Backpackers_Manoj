@@ -1,0 +1,6 @@
+def AsDouble(num) :
+  return toDouble(num)
+  
+def MantissaFromDecimal(num) :
+  str1 = toDecimal(num)
+  return substring(str1,instr(str1,'.')+1)
