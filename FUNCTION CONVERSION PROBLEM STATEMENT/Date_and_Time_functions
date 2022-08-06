@@ -1,0 +1,12 @@
+
+def CurrentTimestamp() :
+  return currentTimeStamp()
+  
+def DateFromDaysSince2(days,date1) :
+  return addDays(date1,days)
+
+def MinutesFromTime(datestr) :
+  return substring(datestr,instr(datestr,":")+1,instr(datestr,":")-1)
+  
+def TimetFromTimestamp(timestmp) :
+  return timestmp - toTimestamp('1970-01-01 00:00:00') ;
