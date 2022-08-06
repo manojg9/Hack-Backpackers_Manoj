@@ -1,0 +1,11 @@
+import xml.etree.ElementTree as ET
+import re
+mytree = ET.parse("C:\\Users\\Manoj\\Downloads\\wf_src_idw_cntry_multi_def_cd.xml")
+myroot = mytree.getroot()
+for neighbor in myroot.iter('MAPPING'):
+      print (neighbor.get('NAME'))
+      for transf in neighbor.iter('TRANSFORMATION') :
+          if re.match(r'SQ',transf.get('NAME')) :    
+             for transf1 in transf.iter('TRANSFORMFIELD'):
+                  print(transf1.get('NAME'))
+ 
