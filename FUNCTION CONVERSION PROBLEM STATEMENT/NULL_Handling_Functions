@@ -1,0 +1,11 @@
+def IsNotNull(expr) :
+  if not IsNull(expr) :
+    return True
+   else :
+    return False
+
+def NullToValue(num1,num2) :
+  if IsNull(num1):
+    return num2
+  else :
+    return num1 
