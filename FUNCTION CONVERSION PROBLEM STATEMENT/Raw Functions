@@ -1,0 +1,4 @@
+def RawLength(raw_str) :
+  my_str=r'1000000000'
+  m_str=raw_str
+  return len(my_str)
