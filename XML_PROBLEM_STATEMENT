@@ -1,15 +1,19 @@
 import xml.etree.ElementTree as ET
 import re
-mytree = ET.parse("C:\\Users\\Manoj\\Downloads\\wf_src_idw_cntry_multi_def_cd.xml")
+xml_file_nm = input("Enter any infa xml file :")
+mytree = ET.parse(xml_file_nm)
 myroot = mytree.getroot()
+
 for neighbor in myroot.iter('MAPPING'):
+      src_cols = []
       print (neighbor.get('NAME'))
       for transf in neighbor.iter('TRANSFORMATION') :
           if re.match(r'SQ',transf.get('NAME')) :    
              for transf1 in transf.iter('TRANSFORMFIELD'):
                   print(transf1.get('NAME'))
+                  src_cols.append(transf1.get('NAME'))
       for transf in neighbor.iter('CONNECTOR') :
           if re.match(r'Source',transf.get('FROMINSTANCETYPE')) and transf.get('TOINSTANCETYPE') == 'Target Definition' :
-              print('Here')
-              print(transf.get('FROMFIELD'))
+               if transf.get('FROMFIELD') in src_cols :
+                  print(transf.get('FROMFIELD') + "=> Target" )
  
