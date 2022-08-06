@@ -1,0 +1,5 @@
+def BitAnd(num1,num2) :
+  return bitwiseAND(num1,num2)
+  
+def BitCompress(mystring):
+  return toDecimal(mystring)
