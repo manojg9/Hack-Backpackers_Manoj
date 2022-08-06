@@ -1,0 +1,32 @@
+def AlNum(str) :
+  return RegexMatch(str,"^[a-zA-Z0-9]*$")
+  
+def Change(str,searchstr,replacestr,pos,occurence) :
+    occ=1
+    if begin > 1 :
+      str1 = susbtring(str,pos)
+     else :
+      str1 = str
+    if occurence == 1 :
+      str2 = substring(str1,instr(str1,searchstr))
+      str3 = substring(str1,instr(str1,searchstr)+1)
+    elif occurence > 1 :
+      while True :
+        str2 = substring(str1,instr(str1,searchstr))
+        str3 = substring(str1,instr(str1,searchstr)+1)
+    else :
+      str2 = str1
+     return replace(str2,searchstr,replacestr)
+
+def Compare(str1,str2,salign) :
+     return compare(str1,str2)
+  
+def Field(str1,delim,occ,num) :
+    if num <= 1 :
+      return replace(replace(substringIndex(str1,delim,occ),substringIndex(str1,delim,occ-1)),delim)
+    else :
+      return substring(replace(substringIndex(str1,delim,occ+1),substringIndex(str1,delim,occ-1)),2)
+      
+def Str(str,num) :
+  len1 = length(str)*num
+  return rpad(str,len1,str)
