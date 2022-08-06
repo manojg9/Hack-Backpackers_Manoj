@@ -1,0 +1,9 @@
+def Abs(expr) :
+  return abs(expr)
+
+def Floor(num) :
+  return floor(num)
+
+def Random() :
+  num = power(2,32)
+  return rand(num)
