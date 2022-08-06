@@ -1,0 +1,2 @@
+First install python Package using below command on command prompt :
+pip install sqlparse
